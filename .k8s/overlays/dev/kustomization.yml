@@ -1,0 +1,11 @@
+resources:
+  - ../../base
+
+secretGenerator:
+  - name: grafana-secret
+    namespace: logging
+    envs:
+      - grafana.env
+
+generatorOptions:
+  disableNameSuffixHash: true

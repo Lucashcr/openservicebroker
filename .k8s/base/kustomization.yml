@@ -1,0 +1,11 @@
+namespace: logging
+
+resources:
+  - namespace.yml
+  - grafana/deployment.yml
+  - grafana/service.yml
+  - grafana/pvc.yml
+  - loki/deployment.yml
+  - loki/service.yml
+  - loki/configmap.yml
+  # - logger/

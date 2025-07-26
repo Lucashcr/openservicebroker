@@ -1,0 +1,38 @@
+# Diretórios de configuração local e cache
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Arquivos e diretórios gerados por builds ou volume mounts
+**/tmp/
+**/__pycache__/
+**/*.pyc
+
+# Volumes persistentes locais (caso use hostPath ou dev bind mounts)
+grafana-data/
+loki-data/
+*.db
+
+# Saídas de comandos como kubectl/kustomize (caso use)
+*.out
+*.log
+
+# Arquivos de backup
+*~
+
+# Se você usar Kustomize build com redirecionamento:
+kustomization.build.yaml
+
+# Credenciais ou arquivos sensíveis locais (você pode manter um .env.example versionado)
+*.env
+secrets.yaml
+*.enc.yaml
+
+# Docker e Kind
+kind-cluster.yaml.bak
+*.tar
+*.img
+
+# Helm charts, se vier a usar
+charts/
