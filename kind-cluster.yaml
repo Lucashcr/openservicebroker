@@ -8,3 +8,5 @@ nodes:
         hostPort: 3000
       - containerPort: 31000 # Loki
         hostPort: 3100
+      - containerPort: 31672 # RabbitMQ
+        hostPort: 15672

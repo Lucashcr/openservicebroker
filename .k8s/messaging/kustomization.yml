@@ -1,0 +1,7 @@
+namespace: messaging
+
+resources:
+  - namespace.yml
+  - rabbitmq/deployment.yml
+  - rabbitmq/service.yml
+  - rabbitmq/pvc.yml

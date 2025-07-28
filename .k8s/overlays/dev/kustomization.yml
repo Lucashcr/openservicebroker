@@ -1,11 +1,17 @@
 resources:
-  - ../../base
+  - ../../logging
+  - ../../messaging
 
 secretGenerator:
   - name: grafana-secret
     namespace: logging
     envs:
       - grafana.env
+
+  - name: rabbitmq-secret
+    namespace: messaging
+    envs:
+      - rabbitmq.env
 
 generatorOptions:
   disableNameSuffixHash: true
