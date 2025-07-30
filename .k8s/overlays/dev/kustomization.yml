@@ -5,11 +5,19 @@ resources:
 secretGenerator:
   - name: grafana-secret
     namespace: logging
+    type: Opaque
     envs:
       - grafana.env
 
+  - name: logger-secret
+    namespace: logging
+    type: Opaque
+    envs:
+      - logger.env
+
   - name: rabbitmq-secret
     namespace: messaging
+    type: Opaque
     envs:
       - rabbitmq.env
 
