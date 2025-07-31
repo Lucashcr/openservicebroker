@@ -10,4 +10,3 @@ resources:
   - loki/configmap.yml
   - loki/pvc.yml
   - logger/deployment.yml
-  - logger/service.yml

@@ -3,5 +3,6 @@ namespace: messaging
 resources:
   - namespace.yml
   - rabbitmq/deployment.yml
-  - rabbitmq/service.yml
+  - rabbitmq/clusterip.yml
+  - rabbitmq/nodeport.yml
   - rabbitmq/pvc.yml
