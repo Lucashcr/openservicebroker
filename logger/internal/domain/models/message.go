@@ -10,7 +10,6 @@ type Message struct {
 	Level       string         `json:"level"`
 	ServiceName string         `json:"serviceName"`
 	Job         string         `json:"job"`
-	OperationID string         `json:"operationId"`
 	Line        string         `json:"line"`
 	Metadata    map[string]any `json:"metadata,omitempty"`
 }
