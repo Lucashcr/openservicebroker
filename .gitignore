@@ -10,8 +10,7 @@
 **/*.pyc
 
 # Volumes persistentes locais (caso use hostPath ou dev bind mounts)
-grafana-data/
-loki-data/
+.k8s/volumes/
 *.db
 
 # Saídas de comandos como kubectl/kustomize (caso use)

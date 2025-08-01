@@ -1,4 +1,6 @@
 resources:
+  - ./logging
+  - ./messaging
   - ../../logging
   - ../../messaging
 
@@ -7,19 +9,19 @@ secretGenerator:
     namespace: logging
     type: Opaque
     envs:
-      - grafana.env
+      - logging/grafana/.env
 
   - name: logger-secret
     namespace: logging
     type: Opaque
     envs:
-      - logger.env
+      - logging/logger/.env
 
   - name: rabbitmq-secret
     namespace: messaging
     type: Opaque
     envs:
-      - rabbitmq.env
+      - messaging/rabbitmq/.env
 
 generatorOptions:
   disableNameSuffixHash: true

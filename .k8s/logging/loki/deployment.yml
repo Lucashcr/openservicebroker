@@ -29,12 +29,12 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /etc/loki
-            - name: storage
+            - name: loki-volume
               mountPath: /loki
       volumes:
         - name: config
           configMap:
             name: loki-config
-        - name: storage
+        - name: loki-volume
           persistentVolumeClaim:
             claimName: loki-pvc

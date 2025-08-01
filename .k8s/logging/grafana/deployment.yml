@@ -28,9 +28,9 @@ spec:
               cpu: "500m"
               memory: "512Mi"
           volumeMounts:
-            - name: grafana-storage
+            - name: grafana-volume
               mountPath: /var/lib/grafana
       volumes:
-        - name: grafana-storage
+        - name: grafana-volume
           persistentVolumeClaim:
             claimName: grafana-pvc

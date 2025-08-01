@@ -1,0 +1,4 @@
+namespace: messaging
+
+resources:
+  - rabbitmq/volume.yml

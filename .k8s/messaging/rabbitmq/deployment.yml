@@ -29,9 +29,9 @@ spec:
               memory: "512Mi"
               cpu: "500m"
           volumeMounts:
-            - name: rabbitmq-data
+            - name: rabbitmq-volume
               mountPath: /var/lib/rabbitmq
       volumes:
-        - name: rabbitmq-data
+        - name: rabbitmq-volume
           persistentVolumeClaim:
             claimName: rabbitmq-pvc

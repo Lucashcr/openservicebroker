@@ -8,3 +8,6 @@ nodes:
         hostPort: 3000
       - containerPort: 31672 # RabbitMQ
         hostPort: 15672
+    extraMounts:
+      - hostPath: ./.k8s/volumes
+        containerPath: /volumes
