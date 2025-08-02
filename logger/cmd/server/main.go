@@ -24,6 +24,13 @@ func main() {
 		log.Println("Could not start consuming: ", err)
 	}
 
+	lokiUrl := os.Getenv("LOKI_URL")
+	if len(lokiUrl) == 0 {
+		log.Fatalln("Missing LOKI_URL environment variable")
+	}
+
+	log.Println("Starting to consume messages from RabbitMQ...")
+
 	for {
 		select {
 		case amqErr := <-chClosedCh:
@@ -46,7 +53,7 @@ func main() {
 				continue
 			}
 
-			err = services.ProcessMessage(message)
+			err = services.ProcessMessage(message, lokiUrl)
 			if err != nil {
 				log.Println("Error to process message: ", err)
 				err = delivery.Nack(false, true)

@@ -7,14 +7,11 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 
 	"github.com/Lucashcr/openservicebroker/logger/internal/domain/models"
 )
 
-var LOKI_URL = os.Getenv("LOKI_URL")
-
-func ProcessMessage(message models.Message) error {
+func ProcessMessage(message models.Message, lokiUrl string) error {
 	labels := make(map[string]string)
 	labels["service_name"] = message.ServiceName
 	labels["job"] = message.Job
@@ -36,7 +33,7 @@ func ProcessMessage(message models.Message) error {
 	}
 	fmt.Println(string(payloadJson))
 
-	response, err := http.Post(LOKI_URL, "application/json", bytes.NewReader(payloadJson))
+	response, err := http.Post(lokiUrl, "application/json", bytes.NewReader(payloadJson))
 	if err != nil {
 		return err
 	}
