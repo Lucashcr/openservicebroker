@@ -56,7 +56,7 @@ func main() {
 			err = services.ProcessMessage(message, lokiUrl)
 			if err != nil {
 				log.Println("Error to process message: ", err)
-				err = delivery.Nack(false, true)
+				err = delivery.Nack(false, false)
 				if err != nil {
 					log.Println("Error non acknowledging message: ", err)
 				}
