@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: logger
-          image: lucashcr/openservicebroker-logger:1.0.0
+          image: lucashcr/openservicebroker-logger:1.0.1
           envFrom:
             - secretRef:
                 name: logger-secret
