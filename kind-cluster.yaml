@@ -11,3 +11,6 @@ nodes:
     extraMounts:
       - hostPath: ./.k8s/volumes
         containerPath: /volumes
+      - hostPath: ./apbs
+        containerPath: /apbs
+        readonly: true
