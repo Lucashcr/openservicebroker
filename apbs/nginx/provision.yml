@@ -1,0 +1,15 @@
+- name: Provisioning Nginx
+  gather_facts: false
+
+  tasks:
+    - name: Pull nginx image
+      community.docker.docker_image_pull:
+        name: "nginx:{{ tag }}"
+        platform: amd64
+
+    - name: Run nginx container
+      community.docker.docker_container:
+        name: "nginx-{{ instance_id }}"
+        image: "nginx:{{ tag }}"
+        published_ports:
+          - "80:80"
