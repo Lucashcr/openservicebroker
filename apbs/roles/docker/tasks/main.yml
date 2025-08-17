@@ -4,7 +4,8 @@
     msg: "Docker environment: {{ docker_environment }}"
 
 - name: Configure Docker environment
-  ansible.builtin.import_tasks: "{{ docker_environment }}/configure.yml"
+  ansible.builtin.include_tasks: "{{ docker_environment }}/configure.yml"
+  when: docker_environment != 'local'
 
 - name: Include Docker tasks from environment
   ansible.builtin.include_tasks:

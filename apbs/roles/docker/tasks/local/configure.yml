@@ -1,4 +1,0 @@
----
-- name: Testando
-  ansible.builtin.debug:
-    msg: "This is a test message"
