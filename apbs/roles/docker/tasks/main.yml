@@ -1,0 +1,12 @@
+---
+- name: Debugging setted environment
+  ansible.builtin.debug:
+    msg: "Docker environment: {{ docker_environment }}"
+
+- name: Configure Docker environment
+  ansible.builtin.import_tasks: "{{ docker_environment }}/configure.yml"
+
+- name: Include Docker tasks from environment
+  ansible.builtin.include_tasks:
+    "{{ docker_environment }}/{{ item }}.yml"
+  loop: "{{ docker_actions | default([docker_action], true) | default([], true) }}"

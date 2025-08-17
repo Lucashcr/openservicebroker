@@ -1,0 +1,15 @@
+- name: Provisioning
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - role: docker
+      vars:
+        docker_actions:
+          - "image/pull"
+          - "container/run"
+        docker_container_name: "{{ image_name }}-{{ instance_id }}"
+        docker_image_name: "{{ image_name }}"
+        docker_image_tag: "{{ image_tag }}"
+        docker_published_ports: "{{ ports | default([]) }}"

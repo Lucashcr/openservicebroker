@@ -1,0 +1,11 @@
+- name: Deprovisioning
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  roles:
+    - role: docker
+      vars:
+        docker_actions:
+          - "container/rm"
+        docker_container_name: "{{ container_name }}"

@@ -1,8 +1,0 @@
-- name: Deprovisioning Nginx
-  gather_facts: false
-
-  tasks:
-    - name: Remove container
-      community.docker.docker_container:
-        name: "nginx-{{ instance_id }}"
-        state: absent

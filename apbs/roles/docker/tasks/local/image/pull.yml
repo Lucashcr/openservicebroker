@@ -1,0 +1,4 @@
+---
+- name: Pull nginx image
+  community.docker.docker_image_pull:
+    name: "{{ docker_image_name }}:{{ docker_image_tag }}"

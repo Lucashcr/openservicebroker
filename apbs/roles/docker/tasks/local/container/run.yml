@@ -1,0 +1,6 @@
+---
+- name: Run container
+  community.docker.docker_container:
+    name: "{{ docker_container_name }}"
+    image: "{{ docker_image_name }}:{{ docker_image_tag }}"
+    published_ports: "{{ docker_published_ports }}"
